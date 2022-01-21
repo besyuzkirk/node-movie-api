@@ -12,7 +12,8 @@ router.post('/add', (req, res, next)=> {
     imdb_score : data.imdb_score,
     category : data.category,
     country : data.country,
-    year : data.year
+    year : data.year,
+    director_id : data.director_id
   });
   const promise = movie.save();
   promise.then((data) => {
@@ -24,7 +25,19 @@ router.post('/add', (req, res, next)=> {
 });
 
 router.get('/list', (req,res,next) => {
-  const promise = Movie.find({});
+  const promise = Movie.aggregate([
+		{
+			$lookup: {
+				from: 'directors',
+				localField: 'director_id',
+				foreignField: '_id',
+				as: 'director'
+			}
+		},
+		{
+			$unwind: '$director'
+		}
+	]);
   promise.then((data) => {
     res.json(data);
   }).catch((err) => {
