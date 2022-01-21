@@ -2,32 +2,28 @@ extends layout
 
 block content
   h1= "MOVIE DIRECTOR API"
-  p( # Movies
- 
-| Route | HTTP Verb | POST body | Description |
-| --- | --- | --- | --- |
-| /api/movie/list | `GET` | Empty | List all movies. |
-| /api/movie/add | `POST` | {'title':'foo', 'category':'bar', 'country':'Turkey', year:1990, director:"id", imdb_score: 9.7 } | Create a new movie. |
-| /api/movie/:movie_id | `GET` | Empty | Get a movie. |
-| /api/movie/:movie_id | `PUT` | {'name':'foo', 'surname':'bar'} | Update a movie with new info. |
-| /api/movie/:movie_id | `DELETE` | Empty | Delete a movie. |
-| /api/movie/top10 | `GET` | Empty | Get the top 10 movies. |
-| /api/movie/between/:start_year/:end_year | `GET` | Empty | Movies between two dates. |
- 
-# Directors
- 
-| Route | HTTP Verb | POST body | Description |
-| --- | --- | --- | --- |
-| /api/directors | `GET` | Empty | List all directors. |
-| /api/directors | `POST` | { name: 'foo', surname:'bar', bio:'lorem ipsum' } | Create a new director. |
-| /api/directors/:director_id | `GET` | Empty | Get a director. |
-| /api/directors/:director_id | `PUT` | {'name':'foo', 'surname':'bar', 'bio': 'lorem'} | Update a director with new info. |
-| /api/directors/:director_id | `DELETE` | Empty | Delete a director. |
-| /api/directors/:director_id/best10movie | `GET` | Empty | The director's top 10 films. |
- 
-# Index
- 
-| Route | HTTP Verb | POST body | Description |
-| --- | --- | --- | --- |
-| /register | `POST` | { username: 'foo', password:'1234' } | Create a new user. |
-| /authenticate | `POST` | { username: 'foo', password:'1234' } | Generate a token. |)
+  p
+  | # Movies
+  | | Route | HTTP Verb | POST body | Description |
+  | | --- | --- | --- | --- |
+  | | /api/movie/list | &grave;GET&grave; | Empty | List all movies. |
+  | | /api/movie/add | &grave;POST&grave; | {&apos;title&apos;:&apos;foo&apos;, &apos;category&apos;:&apos;bar&apos;, &apos;country&apos;:&apos;Turkey&apos;, year:1990, director:&quot;id&quot;, imdb_score: 9.7 } | Create a new movie. |
+  | | /api/movie/:movie_id | &grave;GET&grave; | Empty | Get a movie. |
+  | | /api/movie/:movie_id | &grave;PUT&grave; | {&apos;name&apos;:&apos;foo&apos;, &apos;surname&apos;:&apos;bar&apos;} | Update a movie with new info. |
+  | | /api/movie/:movie_id | &grave;DELETE&grave; | Empty | Delete a movie. |
+  | | /api/movie/top10 | &grave;GET&grave; | Empty | Get the top 10 movies. |
+  | | /api/movie/between/:start_year/:end_year | &grave;GET&grave; | Empty | Movies between two dates. |
+  | # Directors
+  | | Route | HTTP Verb | POST body | Description |
+  | | --- | --- | --- | --- |
+  | | /api/directors | &grave;GET&grave; | Empty | List all directors. |
+  | | /api/directors | &grave;POST&grave; | { name: &apos;foo&apos;, surname:&apos;bar&apos;, bio:&apos;lorem ipsum&apos; } | Create a new director. |
+  | | /api/directors/:director_id | &grave;GET&grave; | Empty | Get a director. |
+  | | /api/directors/:director_id | &grave;PUT&grave; | {&apos;name&apos;:&apos;foo&apos;, &apos;surname&apos;:&apos;bar&apos;, &apos;bio&apos;: &apos;lorem&apos;} | Update a director with new info. |
+  | | /api/directors/:director_id | &grave;DELETE&grave; | Empty | Delete a director. |
+  | | /api/directors/:director_id/best10movie | &grave;GET&grave; | Empty | The director&apos;s top 10 films. |
+  | # Index
+  | | Route | HTTP Verb | POST body | Description |
+  | | --- | --- | --- | --- |
+  | | /register | &grave;POST&grave; | { username: &apos;foo&apos;, password:&apos;1234&apos; } | Create a new user. |
+  | | /authenticate | &grave;POST&grave; | { username: &apos;foo&apos;, password:&apos;1234&apos; } | Generate a token. |
