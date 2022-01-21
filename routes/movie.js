@@ -20,7 +20,7 @@ router.post('/add', (req, res, next)=> {
     res.json(
       {data, status: 1});
   }).catch((err) => {
-      res.json( {status: 0});
+      res.json( err);
   });
 });
 
