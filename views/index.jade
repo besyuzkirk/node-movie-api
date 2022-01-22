@@ -2,28 +2,26 @@ extends layout
 
 block content
   h1= "MOVIE DIRECTOR API"
-  p
-  | # Movies
-  | | Route | HTTP Verb | POST body | Description |
-  | | --- | --- | --- | --- |
-  | | /api/movie/list | &grave;GET&grave; | Empty | List all movies. |
-  | | /api/movie/add | &grave;POST&grave; | {&apos;title&apos;:&apos;foo&apos;, &apos;category&apos;:&apos;bar&apos;, &apos;country&apos;:&apos;Turkey&apos;, year:1990, director:&quot;id&quot;, imdb_score: 9.7 } | Create a new movie. |
-  | | /api/movie/:movie_id | &grave;GET&grave; | Empty | Get a movie. |
-  | | /api/movie/:movie_id | &grave;PUT&grave; | {&apos;name&apos;:&apos;foo&apos;, &apos;surname&apos;:&apos;bar&apos;} | Update a movie with new info. |
-  | | /api/movie/:movie_id | &grave;DELETE&grave; | Empty | Delete a movie. |
-  | | /api/movie/top10 | &grave;GET&grave; | Empty | Get the top 10 movies. |
-  | | /api/movie/between/:start_year/:end_year | &grave;GET&grave; | Empty | Movies between two dates. |
-  | # Directors
-  | | Route | HTTP Verb | POST body | Description |
-  | | --- | --- | --- | --- |
-  | | /api/directors | &grave;GET&grave; | Empty | List all directors. |
-  | | /api/directors | &grave;POST&grave; | { name: &apos;foo&apos;, surname:&apos;bar&apos;, bio:&apos;lorem ipsum&apos; } | Create a new director. |
-  | | /api/directors/:director_id | &grave;GET&grave; | Empty | Get a director. |
-  | | /api/directors/:director_id | &grave;PUT&grave; | {&apos;name&apos;:&apos;foo&apos;, &apos;surname&apos;:&apos;bar&apos;, &apos;bio&apos;: &apos;lorem&apos;} | Update a director with new info. |
-  | | /api/directors/:director_id | &grave;DELETE&grave; | Empty | Delete a director. |
-  | | /api/directors/:director_id/best10movie | &grave;GET&grave; | Empty | The director&apos;s top 10 films. |
-  | # Index
-  | | Route | HTTP Verb | POST body | Description |
-  | | --- | --- | --- | --- |
-  | | /register | &grave;POST&grave; | { username: &apos;foo&apos;, password:&apos;1234&apos; } | Create a new user. |
-  | | /authenticate | &grave;POST&grave; | { username: &apos;foo&apos;, password:&apos;1234&apos; } | Generate a token. |
+  table(cellspacing='3' bgcolor='#000000')
+  tr(bgcolor='#ffffff')
+    th Routa
+    th HTTP Verb
+    th POST body
+    th Description
+  tr(bgcolor='#ffffff')
+    td /api/movie/list
+    td GET
+    td Empty
+    td List all movies.
+  tr(bgcolor='#ffffff')
+    td /api/movie/add
+    td POST
+    td
+      | {title:foo,category:bar,country:Turkey, year:1990, director:id, imdb_score: 9.7 }
+    td List all movies.
+  tr(bgcolor='#ffffff')
+    td /api/movie/get/:movie_id
+    td GET
+    td Empty
+    td Get a movie.
+    h2= "NOT BENGISUYU COK SEVIYORUM"
