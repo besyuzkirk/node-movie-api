@@ -2,26 +2,122 @@ extends layout
 
 block content
   h1= "MOVIE DIRECTOR API"
-  table(cellspacing='3' bgcolor='#000000')
-  tr(bgcolor='#ffffff')
-    th Routa
-    th HTTP Verb
-    th POST body
-    th Description
-  tr(bgcolor='#ffffff')
-    td /api/movie/list
-    td GET
-    td Empty
-    td List all movies.
-  tr(bgcolor='#ffffff')
-    td /api/movie/add
-    td POST
-    td
-      | {title:foo,category:bar,country:Turkey, year:1990, director:id, imdb_score: 9.7 }
-    td List all movies.
-  tr(bgcolor='#ffffff')
-    td /api/movie/get/:movie_id
-    td GET
-    td Empty
-    td Get a movie.
-    h2= "NOT BENGISUYU COK SEVIYORUM"
+  br
+  br
+  table
+    thead
+      tr
+        th Route
+        th HTTP Verb
+        th POST body
+        th Description
+    tbody
+      tr
+        td /api/movie/list
+        td
+          code GET
+        td Empty
+        td List all movies.
+      tr
+        td /api/movie/add
+        td
+          code POST
+        td
+          | {'title':'foo', 'category':'bar', 'country':'Turkey', year:1990, director:"id", imdb_score: 9.7 }
+        td Create a new movie.
+      tr
+        td /api/movie/get/:movie_id
+        td
+          code GET
+        td Empty
+        td Get a movie.
+      tr
+        td /api/movie/update/:movie_id
+        td
+          code PUT
+        td {'name':'foo', 'surname':'bar'}
+        td Update a movie with new info.
+      tr
+        td /api/movie/delete/:movie_id
+        td
+          code DELETE
+        td Empty
+        td Delete a movie.
+      tr
+        td /api/movie/list/top10
+        td
+          code GET
+        td Empty
+        td Get the top 10 movies.
+      tr
+        td /api/movie/get/between/:start_year/:end_year
+        td
+          code GET
+        td Empty
+        td Movies between two dates.
+  br
+  br
+  br
+  table
+    thead
+      tr
+        th Route
+        th HTTP Verb
+        th POST body
+        th Description
+    tbody
+      tr
+        td /api/directors/list
+        td
+          code GET
+        td Empty
+        td List all directors.
+      tr
+        td /api/directors/add
+        td
+          code POST
+        td { name: 'foo', surname:'bar', bio:'lorem ipsum' }
+        td Create a new director.
+      tr
+        td /api/directors/get/:director_id
+        td
+          code GET
+        td Empty
+        td Get a director.
+      tr
+        td /api/directors/update/:director_id
+        td
+          code PUT
+        td {'name':'foo', 'surname':'bar', 'bio': 'lorem'}
+        td Update a director with new info.
+      tr
+        td /api/directors/delete/:director_id
+        td
+          code DELETE
+        td Empty
+        td Delete a director.
+  br
+  br
+  br
+  table
+    thead
+      tr
+        th Route
+        th HTTP Verb
+        th POST body
+        th Description
+    tbody
+      tr
+        td /register
+        td
+          code POST
+        td { username: 'foo', password:'1234' }
+        td Create a new user.
+      tr
+        td /authenticate
+        td
+          code POST
+        td { username: 'foo', password:'1234' }
+        td Generate a token.      
+
+    
